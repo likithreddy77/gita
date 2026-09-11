@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gita — The Bhagavad Gita, verse by verse, and a way through</title>
+<meta name="description" content="Read every sloka of the Bhagavad Gita in Sanskrit, Hindi, Telugu and English, or find the verses that speak to what you're going through right now.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta property="og:title" content="Gita — The Bhagavad Gita, verse by verse, and a way through">
+<meta property="og:description" content="Read every sloka in Sanskrit, Hindi, Telugu and English — or find the verses that speak to what you're going through.">
+<meta property="og:image" content="assets/hero-krishna-arjuna.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="sky"></div>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-glyph">गी</span>
+      <span>
+        <span class="brand-word">Gita</span><br>
+        <span class="brand-sub">18 chapters · 700 verses</span>
+      </span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="chapters.html">Read the Gita</a></li>
+      <li><a href="solutions.html">Find Your Answer</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-bg">
+    <img src="assets/hero-krishna-arjuna.jpg" alt="Krishna counsels Arjuna on the battlefield of Kurukshetra" />
+    <div class="hero-veil"></div>
+  </div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow">Śrīmad Bhagavad Gītā · read freely, in your language</p>
+      <h1>Ancient answers,<br>read on today's questions.</h1>
+      <p class="lede" style="margin-top:22px; color:var(--parchment);">
+        Every sloka of the Gita, in Sanskrit with transliteration, Hindi, Telugu and
+        English — free to browse chapter by chapter, or search by the problem
+        you're actually facing.
+      </p>
+      <div style="display:flex; gap:16px; margin-top:34px; flex-wrap:wrap;">
+        <a class="btn" href="chapters.html">Read the 18 chapters →</a>
+        <a class="btn ghost light" href="solutions.html">I have a problem, not a chapter</a>
+      </div>
+    </div>
+
+    <div id="hero-verse" aria-live="polite" class="hero-verse-card">
+      <div class="verse-card">
+        <div class="ref" id="hv-ref">Loading a verse…</div>
+        <p class="verse-sanskrit" id="hv-sanskrit">॥ लोड हो रहा है ॥</p>
+        <p class="verse-translit" id="hv-translit"></p>
+        <p class="verse-translation" id="hv-translation"></p>
+        <div class="verse-meta">
+          <span class="ref" id="hv-author"></span>
+          <div style="display:flex; gap:10px; align-items:center;">
+            <div class="lang-toggle" id="hv-lang-toggle">
+              <button type="button" data-lang="en" class="active">English</button>
+              <button type="button" data-lang="hi">Hindi</button>
+              <button type="button" data-lang="te">తెలుగు</button>
+            </div>
+            <button class="btn ghost" id="hv-shuffle" type="button" style="padding:10px 18px;">Show another verse ↻</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap"><div class="stats-bar">
+  <div><div class="num">18</div><div class="lbl">Chapters</div></div>
+  <div><div class="num">700</div><div class="lbl">Verses</div></div>
+  <div><div class="num">4</div><div class="lbl">Languages</div></div>
+  <div><div class="num">37</div><div class="lbl">Curated problems</div></div>
+</div></div>
+
+<hr class="divider">
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Two ways in</p>
+    <h2 style="max-width:20ch;">Whether you want the whole text, or just the part that helps right now.</h2>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1px; background:var(--line); margin-top:48px; border:1px solid var(--line);">
+      <a href="chapters.html" style="text-decoration:none; background:var(--dusk); padding:40px; display:block; transition:background .15s;">
+        <span class="ref">01 — For reading</span>
+        <h3 style="margin-top:16px; color:var(--marigold-2);">Read the Gita</h3>
+        <p style="color:var(--parchment-2); margin-top:12px;">
+          Browse all 18 chapters as Krishna and Arjuna spoke them — Sanskrit,
+          transliteration, and translations from multiple traditional commentators,
+          in Hindi or English.
+        </p>
+      </a>
+      <a href="solutions.html" style="text-decoration:none; background:var(--dusk); padding:40px; display:block; transition:background .15s;">
+        <span class="ref">02 — For a problem you're facing</span>
+        <h3 style="margin-top:16px; color:var(--marigold-2);">Find Your Answer</h3>
+        <p style="color:var(--parchment-2); margin-top:12px;">
+          Anxiety, anger, grief, self-doubt, a decision you're stuck on — pick what's
+          going on, and see the specific verses the Gita speaks to it with.
+        </p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section>
+  <div class="wrap">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px;">
+      <div>
+        <p class="eyebrow">All eighteen, at a glance</p>
+        <h2 style="max-width:22ch;">Not sure which chapter you need? Scan the names.</h2>
+      </div>
+      <a href="chapters.html" class="ref" style="color:var(--marigold-2); text-decoration:none;">Open the full reader →</a>
+    </div>
+    <div class="chapter-index" id="chapter-index-preview">
+      <p style="padding:24px; color:var(--sandstone);">Loading chapters…</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section class="tight">
+  <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;">
+    <p style="color:var(--sandstone); font-size:14px; max-width:64ch;">
+      Sanskrit, transliteration, Hindi and English are served live from the open, freely
+      licensed <a href="https://vedicscriptures.github.io" style="color:var(--marigold-2);">vedicscriptures Bhagavad Gita API</a> —
+      no account, no cost. Telugu is available as a toggle on every page — fully covered
+      in the <a href="solutions.html" style="color:var(--marigold-2);">Find Your Answer</a> library,
+      and for the most-read verses elsewhere, with more added over time.
+    </p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand"><span class="brand-glyph">गी</span><span class="brand-word">Gita</span></div>
+        <p>Every sloka of the Bhagavad Gita, free to read in Sanskrit, Hindi, Telugu and English — plus verses matched to what you're actually going through.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="chapters.html">Read the Gita</a></li>
+          <li><a href="solutions.html">Find Your Answer</a></li>
+          <li><a href="about.html">About this site</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Languages</h4>
+        <ul>
+          <li>Sanskrit (original)</li>
+          <li>English</li>
+          <li>Hindi</li>
+          <li>Telugu (growing coverage)</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Sources</h4>
+        <p>Sanskrit, Hindi and English served by the open <a href="https://vedicscriptures.github.io" style="text-decoration:underline;">vedicscriptures API</a>. Telugu translated for this site — see <a href="about.html" style="text-decoration:underline;">About</a> for details.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>GITA — READ FREELY</p>
+      <p>NO ACCOUNT · NO ADS · NO COST</p>
+    </div>
+  </div>
+</footer>
+
+<button class="chat-fab" id="chat-fab" aria-label="Ask about the Gita" type="button">गी<span class="dot"></span></button>
+<div class="chat-panel" id="chat-panel">
+  <div class="chat-head">
+    <div>
+      <div class="title">Ask Gita</div>
+      <div class="sub">Rule-based · instant · free</div>
+    </div>
+    <button class="chat-close" id="chat-close" type="button" aria-label="Close">×</button>
+  </div>
+  <div class="chat-body" id="chat-body"></div>
+  <form class="chat-input-row" id="chat-form">
+    <input type="text" id="chat-input" placeholder="Ask a question…" autocomplete="off">
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+<script src="js/nav.js"></script>
+<script src="data/telugu.js"></script>
+<script src="data/solutions.js"></script>
+<script src="js/api.js"></script>
+<script src="js/search.js"></script>
+<script>
+  let heroData = null, heroCh = 2, heroVerse = 47, heroLang = "en";
+
+  function heroTranslation(data, lang) {
+    if (lang === "te") {
+      const te = teluguFor(heroCh, heroVerse);
+      if (te) return { text: te, author: "ఈ వెబ్‌సైట్ కోసం అనువదించబడింది", fallback: false };
+      const en = pickTranslation(data, "en");
+      return { text: en.text, author: en.author, fallback: true };
+    }
+    return pickTranslation(data, lang);
+  }
+
+  function renderHero() {
+    if (!heroData) return;
+    const t = heroTranslation(heroData, heroLang);
+    document.getElementById("hv-ref").textContent = `Bhagavad Gita ${heroCh}.${heroVerse}`;
+    document.getElementById("hv-sanskrit").textContent = heroData.slok;
+    document.getElementById("hv-translit").textContent = heroData.transliteration || "";
+    document.getElementById("hv-translation").textContent =
+      (heroLang === "te" && t.fallback ? "(తెలుగు అనువాదం ఇంకా లేదు — ఆంగ్లం చూపిస్తోంది) " : "") + t.text;
+    document.getElementById("hv-author").textContent = t.author ? `— ${t.author}` : "";
+    document.querySelectorAll("#hv-lang-toggle button").forEach(b =>
+      b.classList.toggle("active", b.dataset.lang === heroLang)
+    );
+  }
+
+  async function loadHeroVerse(ref) {
+    const r = ref || randomVerseRef();
+    heroCh = r.ch; heroVerse = r.verse;
+    document.getElementById("hv-ref").textContent = `Loading BG ${heroCh}.${heroVerse}…`;
+    try {
+      heroData = await fetchVerse(heroCh, heroVerse);
+      renderHero();
+    } catch (e) {
+      document.getElementById("hv-ref").textContent = "Couldn't load a verse";
+      document.getElementById("hv-translation").textContent = "Check your connection and try again.";
+    }
+  }
+
+  loadHeroVerse({ ch: 2, verse: 47 });
+  document.getElementById("hv-shuffle").addEventListener("click", () => loadHeroVerse());
+  document.querySelectorAll("#hv-lang-toggle button").forEach(btn => {
+    btn.addEventListener("click", () => { heroLang = btn.dataset.lang; renderHero(); });
+  });
+
+  async function loadChapterPreview() {
+    const box = document.getElementById("chapter-index-preview");
+    try {
+      const chapters = await fetchChapters();
+      box.innerHTML = chapters.map(c => `
+        <a href="chapters.html?ch=${c.chapter_number}">
+          <span class="num">${c.chapter_number}</span>
+          <span>
+            <h4>${c.name || ""}</h4>
+            <p class="meaning">${c.translation || c.transliteration || ""}</p>
+          </span>
+        </a>
+      `).join("");
+    } catch (e) {
+      box.innerHTML = `<p style="padding:24px; color:var(--sandstone);">Couldn't load the chapter list — check your connection.</p>`;
+    }
+  }
+  loadChapterPreview();
+</script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>

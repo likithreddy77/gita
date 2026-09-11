@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Answer — the Gita for what you're going through</title>
+<meta name="description" content="Anxiety, anger, grief, self-doubt, a decision you're stuck on — find the specific Bhagavad Gita verses that speak to it, in Sanskrit, Hindi, Telugu or English.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta property="og:title" content="Find Your Answer — the Gita for what you're going through">
+<meta property="og:description" content="Tell it what's going on, in your own words, and get specific Bhagavad Gita verses back.">
+<meta property="og:image" content="assets/hero-krishna-arjuna.jpg">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .filter-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
+  .chip{
+    font-family:var(--f-mono); font-size:12px; letter-spacing:0.04em;
+    padding:9px 16px; border:1px solid var(--line); border-radius:999px;
+    background:transparent; color:var(--parchment-2); cursor:pointer;
+  }
+  .chip.active{ border-color:var(--marigold); color:var(--marigold-2); background:rgba(217,164,65,0.08); }
+
+  .problem-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:36px; }
+  .problem-card{
+    background:var(--dusk); padding:28px 26px; text-align:left; border:0; cursor:pointer; color:var(--parchment);
+  }
+  .problem-card .cat{ font-family:var(--f-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--sandstone); }
+  .problem-card h3{ margin-top:10px; font-size:19px; color:var(--parchment); }
+  .problem-card:hover h3{ color:var(--marigold-2); }
+
+  .answer-panel{ margin-top:52px; }
+  .why-box{
+    border:1px solid var(--line); border-left:2px solid var(--vermillion-2); background:var(--dusk-2);
+    padding:22px 26px; margin-bottom:24px;
+  }
+  .why-box p{ margin:0; color:var(--parchment-2); }
+
+  .search-box{ display:flex; gap:10px; margin-top:30px; max-width:640px; flex-wrap:wrap; }
+  .search-box input{
+    flex:1; min-width:220px; background:var(--dusk-2); border:1px solid var(--line); color:var(--parchment);
+    font-family:var(--f-body); font-size:16px; padding:14px 18px; border-radius:2px;
+  }
+  .search-box input:focus{ outline:none; border-color:var(--marigold); }
+  .search-box input::placeholder{ color:var(--sandstone); }
+  .search-note{ margin-top:10px; font-family:var(--f-mono); font-size:12px; color:var(--sandstone); }
+  .search-results-head{ display:flex; justify-content:space-between; align-items:center; margin-top:44px; flex-wrap:wrap; gap:10px; }
+  .clear-search{ background:none; border:0; color:var(--marigold-2); font-family:var(--f-mono); font-size:12px; cursor:pointer; text-decoration:underline; }
+</style>
+</head>
+<body>
+<div class="sky"></div>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-glyph">गी</span>
+      <span><span class="brand-word">Gita</span><br><span class="brand-sub">18 chapters · 700 verses</span></span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="chapters.html">Read the Gita</a></li>
+      <li><a href="solutions.html" class="active">Find Your Answer</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header style="padding:64px 0 20px;">
+  <div class="wrap">
+    <p class="eyebrow">37 problems, drawn from all 18 chapters</p>
+    <h2 style="max-width:24ch;">Every problem has a place to start. Find yours.</h2>
+    <p class="lede" style="margin-top:16px;">
+      This is the Gita's whole premise: whatever you're carrying, there's guidance for it.
+      Tell it what's actually going on, in your own words — or pick from the list below.
+      Either way you'll get specific verses, not just a category.
+    </p>
+
+    <form class="search-box" id="search-form">
+      <input type="text" id="problem-search" placeholder="e.g. I can't stop comparing myself to my coworkers" autocomplete="off">
+      <button class="btn" type="submit">Find verses</button>
+    </form>
+    <p class="search-note">Matched against the 37 entries below by keyword — and if nothing matches exactly, you still get a real starting point, not a dead end.</p>
+
+    <div class="filter-row" id="filter-row"></div>
+  </div>
+</header>
+
+<section class="tight">
+  <div class="wrap">
+    <div id="search-results"></div>
+    <div id="browse-section">
+      <div class="problem-grid" id="problem-grid"></div>
+    </div>
+    <div class="answer-panel" id="answer-panel"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand"><span class="brand-glyph">गी</span><span class="brand-word">Gita</span></div>
+        <p>Every sloka of the Bhagavad Gita, free to read in Sanskrit, Hindi, Telugu and English — plus verses matched to what you're actually going through.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="chapters.html">Read the Gita</a></li>
+          <li><a href="solutions.html">Find Your Answer</a></li>
+          <li><a href="about.html">About this site</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Languages</h4>
+        <ul>
+          <li>Sanskrit (original)</li>
+          <li>English</li>
+          <li>Hindi</li>
+          <li>Telugu (growing coverage)</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Sources</h4>
+        <p>Sanskrit, Hindi and English served by the open <a href="https://vedicscriptures.github.io" style="text-decoration:underline;">vedicscriptures API</a>. Telugu translated for this site — see <a href="about.html" style="text-decoration:underline;">About</a> for details.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>GITA — READ FREELY</p>
+      <p>NO ACCOUNT · NO ADS · NO COST</p>
+    </div>
+  </div>
+</footer>
+
+<button class="chat-fab" id="chat-fab" aria-label="Ask about the Gita" type="button">गी<span class="dot"></span></button>
+<div class="chat-panel" id="chat-panel">
+  <div class="chat-head">
+    <div>
+      <div class="title">Ask Gita</div>
+      <div class="sub">Rule-based · instant · free</div>
+    </div>
+    <button class="chat-close" id="chat-close" type="button" aria-label="Close">×</button>
+  </div>
+  <div class="chat-body" id="chat-body"></div>
+  <form class="chat-input-row" id="chat-form">
+    <input type="text" id="chat-input" placeholder="Ask a question…" autocomplete="off">
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+<script src="js/nav.js"></script>
+<script src="data/solutions.js"></script>
+<script src="data/telugu.js"></script>
+<script src="js/api.js"></script>
+<script src="js/search.js"></script>
+<script src="js/solutions.js"></script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>

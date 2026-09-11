@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Gita</title>
+<meta name="description" content="What this site is, where its verse text comes from, and an honest account of what's still incomplete.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta property="og:title" content="About — Gita">
+<meta property="og:description" content="What this site is, where its verse text comes from, and an honest account of what's still incomplete.">
+<meta property="og:image" content="assets/hero-krishna-arjuna.jpg">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .about-block{ max-width:70ch; }
+  .about-block + .about-block{ margin-top:44px; }
+  .coverage-row{ display:flex; justify-content:space-between; align-items:center; padding:14px 0; border-bottom:1px solid var(--line); gap:16px; flex-wrap:wrap; }
+  .coverage-row:last-child{ border-bottom:0; }
+  .coverage-row .name{ font-family:var(--f-body); color:var(--parchment); }
+  .coverage-row .status{ font-family:var(--f-mono); font-size:12px; letter-spacing:0.06em; color:var(--sandstone); text-align:right; }
+  .coverage-row .status.full{ color:var(--marigold-2); }
+</style>
+</head>
+<body>
+<div class="sky"></div>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-glyph">गी</span>
+      <span><span class="brand-word">Gita</span><br><span class="brand-sub">18 chapters · 700 verses</span></span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="chapters.html">Read the Gita</a></li>
+      <li><a href="solutions.html">Find Your Answer</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header style="padding:64px 0 20px;">
+  <div class="wrap">
+    <p class="eyebrow">About this site</p>
+    <h1 style="font-size:clamp(32px,4.5vw,52px);">Built with free resources, kept honest about their limits.</h1>
+  </div>
+</header>
+
+<section class="tight">
+  <div class="wrap">
+
+    <div class="about-block">
+      <h3>What this is</h3>
+      <p class="lede" style="margin-top:12px;">
+        Gita is a small, free reading site for the Bhagavad Gita: every chapter and verse
+        in the original Sanskrit, with transliteration and translation — plus a second way
+        in, for people who'd rather describe a problem than pick a chapter number. No
+        account, no ads, no cost, ever.
+      </p>
+    </div>
+
+    <div class="about-block">
+      <h3>Where the text comes from</h3>
+      <p style="color:var(--parchment-2); margin-top:12px;">
+        Sanskrit, transliteration, Hindi and English are served live from the
+        <a href="https://vedicscriptures.github.io" style="color:var(--marigold-2);">vedicscriptures Bhagavad Gita API</a>,
+        an open, freely licensed dataset covering all 700 verses with translations from
+        roughly twenty traditional commentators. This site doesn't store or alter that
+        text — every time you open a verse, it's fetched fresh.
+      </p>
+    </div>
+
+    <div class="about-block">
+      <h3>Telugu — and being straight about the gap</h3>
+      <p style="color:var(--parchment-2); margin-top:12px;">
+        No free, live, no-key API offers Telugu translations of the Gita at the moment —
+        we checked several. Rather than leave Telugu out entirely, the verses used across
+        this site's <a href="solutions.html" style="color:var(--marigold-2);">Find Your Answer</a>
+        library, plus Chapters 2 and 12 in full and a set of the most-read verses elsewhere,
+        have been translated directly from the Sanskrit for this site. They're original
+        renderings, not pulled from any published edition — solid for reading and
+        reflection, but not a substitute for a verified print Telugu Gita if you need one
+        for study or recitation. Anywhere else, the Telugu toggle falls back to English
+        with a small note, rather than showing nothing.
+      </p>
+      <div style="margin-top:22px; border:1px solid var(--line); background:var(--dusk-2); padding:8px 26px;">
+        <div class="coverage-row"><span class="name">Chapter 2 — all 72 verses (complete)</span><span class="status full">Full Telugu coverage</span></div>
+        <div class="coverage-row"><span class="name">Chapter 12 — all 20 verses (complete)</span><span class="status full">Full Telugu coverage</span></div>
+        <div class="coverage-row"><span class="name">Find Your Answer library (37 problems)</span><span class="status full">Full Telugu coverage</span></div>
+        <div class="coverage-row"><span class="name">~20 well-known verses across other chapters</span><span class="status">Covered — falls back to English elsewhere</span></div>
+        <div class="coverage-row"><span class="name">Chapters 1, 3–11, 13–18 (beyond the above)</span><span class="status">English shown, Telugu added chapter by chapter</span></div>
+      </div>
+    </div>
+
+    <div class="about-block">
+      <h3>What "Find Your Answer" is, and isn't</h3>
+      <p style="color:var(--parchment-2); margin-top:12px;">
+        The 37 entries in that library, and the verses each one points to, were chosen by
+        hand — not generated automatically from the text. The free-text search matches
+        your own words against those entries by keyword; if nothing matches well, it shows
+        a few broad starting points instead of coming back empty. None of it is medical,
+        psychiatric, or professional advice — it's a way to sit with the text next to
+        something specific, nothing more.
+      </p>
+    </div>
+
+    <div class="about-block">
+      <h3>Built with</h3>
+      <p style="color:var(--parchment-2); margin-top:12px;">
+        Plain HTML, CSS and JavaScript — no framework, no build step, no server beyond
+        static hosting. The verse data comes from the open API above; nothing else about
+        the text is stored anywhere. If something looks wrong or a verse won't load,
+        it's almost always the API being briefly unreachable — reloading usually fixes it.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand"><span class="brand-glyph">गी</span><span class="brand-word">Gita</span></div>
+        <p>Every sloka of the Bhagavad Gita, free to read in Sanskrit, Hindi, Telugu and English — plus verses matched to what you're actually going through.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="chapters.html">Read the Gita</a></li>
+          <li><a href="solutions.html">Find Your Answer</a></li>
+          <li><a href="about.html">About this site</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Languages</h4>
+        <ul>
+          <li>Sanskrit (original)</li>
+          <li>English</li>
+          <li>Hindi</li>
+          <li>Telugu (growing coverage)</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Sources</h4>
+        <p>Sanskrit, Hindi and English served by the open <a href="https://vedicscriptures.github.io" style="text-decoration:underline;">vedicscriptures API</a>. Telugu translated for this site.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>GITA — READ FREELY</p>
+      <p>NO ACCOUNT · NO ADS · NO COST</p>
+    </div>
+  </div>
+</footer>
+
+<button class="chat-fab" id="chat-fab" aria-label="Ask about the Gita" type="button">गी<span class="dot"></span></button>
+<div class="chat-panel" id="chat-panel">
+  <div class="chat-head">
+    <div>
+      <div class="title">Ask Gita</div>
+      <div class="sub">Rule-based · instant · free</div>
+    </div>
+    <button class="chat-close" id="chat-close" type="button" aria-label="Close">×</button>
+  </div>
+  <div class="chat-body" id="chat-body"></div>
+  <form class="chat-input-row" id="chat-form">
+    <input type="text" id="chat-input" placeholder="Ask a question…" autocomplete="off">
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+<script src="js/nav.js"></script>
+<script src="data/solutions.js"></script>
+<script src="data/telugu.js"></script>
+<script src="js/api.js"></script>
+<script src="js/search.js"></script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>
